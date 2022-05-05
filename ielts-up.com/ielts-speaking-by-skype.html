@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Mirrored from ielts-up.com/ielts-speaking-by-skype.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 May 2022 09:19:41 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Free IELTS Speaking by Skype! Choose convenient day and time and book your IELTS speaking test with an examiner. Number of places is limited." />
+<meta name="keywords" content="ielts speaking by skype, ielts speaking, practice" />
+<link rel="stylesheet" 
+    media="(max-width : 1150px)" href="ipad.css">
+	<link rel = "stylesheet"  media="(min-width : 1150px)" type = "text/css" href = "style.css">
+<title>IELTS Speaking by Skype</title>
+
+<style>
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {text-align: left;}
+
+.month{color:#03C; font-weight:bold; display:inline; padding:0 20px 10px 20px;}
+.nextMonth {color:#03C; font-weight:bold; display:inline; float:right; padding:0 20px 10px 20px;}
+.nextMonth:hover { text-decoration:underline;} 
+.nextMonth:active { text-decoration:underline; color:red;} 
+.cell-heading{padding: 2px; text-align:center; vertical-align:middle;}
+.cell {background-color:white; color:#000; padding: 2px; text-align:center; vertical-align:middle;}
+.cell:not(.clicked):not(.disabled):hover {background-color:#FCC;} 
+.clicked {background-color:#f2623d; color:#FFF;}
+.disabled { color:#b5b6b1; background-color:#C1C1C1;}
+.pastDay {color:#ABABAB;}
+</style>
+
+<script src="../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+		
+		//if ($.cookie('timeCookie') != null) alert("Only 1 booking!");
+		
+		var d = new Date(); // current date
+		var firstDay = new Date (d.getFullYear(), d.getMonth(), 1); //first day of this month
+		firstDay = firstDay.getDay();
+			if (firstDay==0) firstDay+=7;
+		
+		fillMonth(firstDay, false, numberOfDays(d.getFullYear(), d.getMonth())); // fill the calendar with data
+		
+		var currentMonth=d.getMonth();
+		var year = d.getFullYear();
+		
+		var month = new Array();
+		month[0] = "January";
+		month[1] = "February";
+		month[2] = "March";
+		month[3] = "April";
+		month[4] = "May";
+		month[5] = "June";
+		month[6] = "July";
+		month[7] = "August";
+		month[8] = "September";
+		month[9] = "October";
+		month[10] = "November";
+		month[11] = "December";
+		
+		$(".month").html(month[d.getMonth()]);
+		
+		
+		//-----------------------
+		// note that month is 0-based, like in the Date object. Adjust if necessary.
+		function numberOfDays(year, month) {
+			var isLeap = ((year % 4) == 0 && ((year % 100) != 0 || (year % 400) == 0));
+			return [31, (isLeap ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+		}
+		//-----------------------
+		
+		function fillMonth(firstDay, next, numOfDays) {		
+		var i=1;
+				$("#day1"+firstDay).html(1);
+				$(".pastDay").html(""); $(".disabled").html("");
+				for (var k=1; k<=5; k++)
+				{
+					for (var n=1; n<8; n++) {$("#day"+k+n).addClass("disabled"); $("#day"+k+n).removeClass("pastDay"); 
+					$("#day"+k+n).html("");}
+				}
+				
+				for (var k=1; k<=5; k++)
+				{
+					n=1;
+					if (k==1) n=firstDay;
+					while (n<=7)
+					{
+						if (i<=numOfDays)
+						{
+							$("#day"+k+n).removeClass("disabled");
+							$("#day"+k+n).html(i);
+						}
+						if ( (next!=true)&& (i<=d.getDate()) ) $("#day"+k+n).addClass("pastDay");
+						i++;
+						n++;
+					}
+				}
+		}
+		
+								
+    $(".cell").click(function(){
+		$(".cell").not(this).removeClass("clicked");
+		$( this ).addClass("clicked");
+		//$(".month").html($( this ).html());
+		//$(".available-time").show;
+		showTime($( this ).html());
+    });
+	
+//----------------------
+	function showTime(day) {
+     	if (day == "") {document.getElementById("available-time").innerHTML = ""; return; } 
+		
+		else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } 
+		
+		else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+		
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
+			{
+                document.getElementById("available-time").innerHTML = xmlhttp.responseText;
+            }
+        };
+		//var date =d.getFullYear()+"-"+d.getMonth()+1+"-"+day;
+		currentMonth++;
+		var date =year+"-"+currentMonth+"-"+day;
+		currentMonth--;
+		//$(".month").html(date);
+        xmlhttp.open("GET.html","php/getday03d2.html?q="+date,true);
+        xmlhttp.send();
+		}
+	}
+	
+//----------------------
+		function setCookie(cname, cvalue, exdays) {
+					var d = new Date();
+					d.setTime(d.getTime() + (exdays*24*60*60*1000));
+					var expires = "expires="+d.toUTCString();
+					document.cookie = cname + "=" + cvalue + "; " + expires;
+				}
+	
+		function getCookie(cname) {
+					var name = cname + "=";
+					var ca = document.cookie.split(';');
+					for(var i=0; i<ca.length; i++) {
+						var c = ca[i];
+						while (c.charAt(0)==' ') c = c.substring(1);
+						if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+					}
+					return "";
+				}
+				
+				
+	//----------------------			
+				
+		$(".nextMonth").click(function(){
+			$(".cell").removeClass("clicked");
+			
+			if (currentMonth==d.getMonth()) // switch to the next month
+			{ 
+			
+			$(".nextMonth").html("< previous month");
+			
+			if (currentMonth!=11)
+			{
+				currentMonth++;
+				$(".month").html(month[d.getMonth()+1]);
+				var firstDay2 = new Date (d.getFullYear(), d.getMonth()+1, 1); //first day of the next month
+				var numOfDays = numberOfDays(d.getFullYear(), d.getMonth()+1);
+			} 
+			else 
+			{
+				currentMonth=0; year++;
+				date =d.getFullYear()+1+"-"+1+"-"+day;
+				$(".month").html(month[0]);
+				var firstDay2 = new Date (d.getFullYear()+1, 0, 1); //first day of the next month
+				var numOfDays = numberOfDays(d.getFullYear()+1, 0);
+			}
+				
+				firstDay2 = firstDay2.getDay();
+					if (firstDay2==0) firstDay2+=7;
+				
+				fillMonth(firstDay2, true, numOfDays);
+			}
+			
+			else // switch to previous month
+			{
+				$(".month").html(month[d.getMonth()]);
+				$(".nextMonth").html("next month >"); 
+				if (currentMonth==0)  // back to December
+				{
+					currentMonth=11;
+				}
+				else  // back not to December
+				{ 
+				 	currentMonth--;
+				}
+				
+				year = d.getFullYear();
+				fillMonth(firstDay, false, numberOfDays(d.getFullYear(), d.getMonth()));
+			}
+			
+		});
+		
+});
+</script>
+</head>
+
+<body>
+
+<!----------------left sidebar---------------------------------->
+<div id="sidebar-left">
+
+  <div id="left-menu">
+  
+    <div class="bookmark1"> <a href="ielts-writing-correction.html" >Writing correction</a> </div>
+    <div class="bookmark2">IELTS vocabulary</div>
+    		<div class="sub2"><a href="writing/ielts-vocabulary-writing.html">Writing</a></div>
+            <div class="sub2"><a href="speaking/ielts-vocabulary-speaking.html">Speaking</a></div>
+    <div class="bookmark4"> <a href="ielts-score-maximizer.html">Maximize your score!</a> </div>
+    <div class="bookmark3">IELTS test samples</div>
+    		<div class="sub3"><a href="listening/ielts-listening-practice.html">Listening</a></div>
+            <div class="sub3"><a href="reading/ielts-reading-practice.html">Reading</a></div>
+            <div class="sub3"><a href="writing/ielts-writing-practice.html">Writing</a></div>
+            <div class="sub3"><a href="speaking/ielts-speaking-practice.html">Speaking</a></div>
+    <!--<div class="bookmark5"> <a href="/trial-ielts-exam.html">Take trial IELTS </a> </div>-->
+    <div class="bookmark5"> <a href="ielts-speaking-simulator.html">Speaking simulator</a> </div>
+  </div>
+  <!-- left-menu end -->
+  
+  
+  
+</div>
+<!-- sidebar-left end --> 
+
+
+<!------------------right sidebar-------------------------------------->
+
+<div id="sidebar-right" align="center">
+  <form class="news-letter" action="https://ielts-up.com/join.php" method="post">
+    <!-- subscribe/подписка -->
+    <h2 class="news-letter-title">Free IELTS lessons signup</h2>
+    <input type="text" class="news-letter-input" name="name" placeholder="Your name" autofocus>
+    <input type="text" class="news-letter-input" name="email" placeholder="Your Email" autofocus>
+    <input type="submit" value="Subscribe!" class="news-letter-button">
+  </form>
+  <!-- news-letter end --> 
+  
+  
+
+
+</div>
+
+<!-------------------page----------------------------------->
+
+<div id="page">
+  <!--------------------header, logo and top-menu ------------------->
+
+    <div id="header">     
+    
+    </div>
+    <!-- header end --> 
+    <div id="menu">
+            
+        <ul>
+        	 <a href="index.html" class="home-button green" >
+             <li><img src="images/home-img.png" alt="home"/></li></a>
+            
+            <li> 
+            <input type="checkbox" id="drop-l">
+            <label for="drop-l" class="toggle button green">Listening</label>
+            <a class="button green" href="listening/ielts-listening-test.html">Listening</a>
+              <ul>
+                <a href="listening/ielts-listening-practice.html"><li>Practice</li></a>
+                <a href="listening/ielts-listening-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            
+            <li>             
+            <input type="checkbox" id="drop-r">
+            <label for="drop-r" class="toggle button green">Reading</label>
+            <a class="button green" href="reading/ielts-reading-test.html">Reading</a>
+              <ul> 
+                
+                <a href="reading/ielts-reading-practice.html#academic"><li>Academic practice</li></a>
+                <a href="reading/ielts-reading-practice.html#general"><li>General practice</li></a>
+                <a href="reading/ielts-reading-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            <li>
+            <input type="checkbox" id="drop-w">
+            <label for="drop-w" class="toggle button green">Writing</label>
+            <a class="button green" href="writing/ielts-writing-test.html">Writing</a>
+            <ul>
+                <a href="writing/ielts-academic-task-1.html"><li>Task 1 Academic</li></a>
+                <a href="writing/ielts-general-task-1.html"><li>Task 1 General</li></a>
+                <a href="writing/ielts-essay.html"><li>Task 2 (essay)</li></a>
+                <a href="writing/ielts-vocabulary-writing.html"><li>Vocabulary</li></a>
+                <a href="writing/ielts-writing-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            <li> 
+            <input type="checkbox" id="drop-s">
+            <label for="drop-s" class="toggle button green">Speaking</label>
+            <a class="button green" href="speaking/ielts-speaking-test.html">Speaking</a>
+              <ul>
+                <a href="speaking/ielts-speaking-practice.html"><li>Practice</li></a>
+                <a href="speaking/ielts-vocabulary-speaking.html"><li>Vocabulary</li></a>
+                <a href="speaking/ielts-speaking-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            <li> 
+            <input type="checkbox" id="drop-e">
+            <label for="drop-e" class="toggle button green">Exercises</label>
+            <a class="button green" href="exercises/free-ielts-exercises.html">Exercises</a>
+              <ul>
+                <a href="exercises/ielts-listening-exercises.html"><li>Listening</li></a>
+                <a href="exercises/ielts-reading-exercises.html"><li>Reading</li></a>
+                <a href="exercises/ielts-writing-exercises.html"><li>Writing</li></a>
+                <a href="exercises/ielts-speaking-exercises.html"><li>Speaking</li></a>
+              </ul>
+            </li>
+          </ul>
+      </div> <!----- menu end -----> 
+    
+    <!-------------------page content ---------------------------->
+    
+        <div id="content">
+        <div id="mobile-subscribe" align="right"><a href="subscribe.html">Subscribe for free IELTS lessons</a></div>
+        <div id="left-menu-under"> </div>
+        <h1>IELTS Speaking tests by Skype</h1> 
+        <p>Would you like to pass speaking test like on a real IELTS exam?</p>
+        <p>We offer you a unique opportunity to take free trial speaking test. Trial tests have the same format as real IELTS speaking tests. The test is divided into 3 parts, and usually lasts from 10 to 15 minutes. You will work through all the parts of the test with your IELTS speaking tutor, recreating exam conditions and timing your interaction. After you complete the test, we send you the results during 12 hours. </p>
+        <p style="color:#06C;">*Note: you can book only one test during 2 weeks.</p>
+        <p>To book your <strong>free trial IELTS Speaking test</strong>, just choose day and time, and complete the form below. 
+</p>
+        <p>Choose day:</p>
+        <div style="width:80%; margin-left:auto; margin-right:auto; "><div class="month"></div> 
+        <div class="nextMonth">next month ></div></div>
+        <table id="timetable" border="1" cellspacing="0" cellpadding="0" align="center" style="width:80%;">
+          <tr>
+            <td valign="top"><div class="cell-heading">Monday</div></td>
+            <td valign="top"><div class="cell-heading">Tuesday</div></td>
+            <td valign="top"><div class="cell-heading">Wednesday</div></td>
+            <td valign="top"><div class="cell-heading">Thursday</div></td>
+            <td valign="top"><div class="cell-heading">Friday</div></td>
+            <td valign="top"><div class="cell-heading">Saturday</div></td>
+            <td valign="top"><div class="cell-heading">Sunday</div></td>
+          </tr>
+          <tr>
+          <strong>  
+    <td valign="top"><div class="cell" id="day11">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day12">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day13">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day14">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day15">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day16">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day17">&nbsp;</div></td>
+    </tr>
+    <tr>
+    <td valign="top"><div class="cell" id="day21">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day22">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day23">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day24">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day25">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day26">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day27">&nbsp;</div></td>
+    
+    </tr>
+    <tr>
+	<td valign="top"><div class="cell" id="day31">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day32">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day33">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day34">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day35">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day36">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day37">&nbsp;</div></td>
+    
+    </tr>
+    <tr>
+    <td valign="top"><div class="cell" id="day41">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day42">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day43">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day44">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day45">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day46">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day47">&nbsp;</div></td>
+    
+    </tr>
+    <tr>
+    <td valign="top"><div class="cell" id="day51">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day52">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day53">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day54">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day55">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day56">&nbsp;</div></td>
+    <td valign="top"><div class="cell" id="day57">&nbsp;</div></td>
+    
+          </tr></strong>
+        </table>
+       
+        
+            
+            <form name="form" onsubmit="return validateForm()" action="https://ielts-up.com/php/settime.php" method="post" >
+            <div id="available-time"> <p>Available time will appear here</p>
+            <!--Name : <input type="text" required="required" name="name" /><br />
+            E-mail: <input type="text" required="required" name="age" /><br />
+            enctype="multipart/form-data"
+            <input type="radio" name="time" value="10:00"  /> 8:00 GMT <Br>
+            <input type="radio" name="time" value="opera"  /> 8:00 GMT <Br>
+            <input type="radio" name="time" value="firefox"  /> 8:00 GMT <Br>-->
+            </div>
+            <div id="noname" style="display:none;">No name!</div> <div id="noemail" style="display:none;">No email!</div>
+            </form>
+          
+ 	
+    	
+        
+        
+<span id="result"></span>
+ 
+<!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+<script src="script/jquery-1.8.1.min.js" type="text/javascript"></script>
+<script src="script/my_script.js" type="text/javascript"></script>-->
+
+<p>
+      <!----- social services -------> 
+      </p>
+          <div id="social"> <!-- facebook, twitter, vk --> 
+              
+            <div class="like">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="https://www.ielts-up.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        </div>
+        
+        <div class="like">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+        
+        <div class="like">
+        <script type="text/javascript" src="../apis.google.com/js/plusone.js"></script>
+<g:plusone size="medium"></g:plusone>
+		</div>
+        
+      </div>   
+        
+     <!-- social services end -->
+     
+        </div>
+        <!-- content end -->  
+
+        
+        
+    <!-----------------------------------------------------------> 
+
+<div id="footer" align="center">
+ <a href="contacts.html">Contact us</a> &nbsp;
+ <a href="project.html">About the project</a>
+ <br> &copy;  ielts-up.com, 2015-2019. All rights reserved. 
+ <!--<br /> <span style="font-size:9px; line-height:110%;">IELTS® is a registered trademark of University of Cambridge ESOL, the British Council, and IDP Education Australia. By using this website, you agree that you fully understand that it is not affiliated, approved or endorsed by University of Cambridge ESOL, the British Council, or IDP Education Australia. </span> -->
+ 
+</div> <!-- footer end -->
+
+</div>
+<!-- page end -->
+
+
+
+
+</body>
+
+<!-- Mirrored from ielts-up.com/ielts-speaking-by-skype.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 May 2022 09:19:51 GMT -->
+</html>
+
+
+
+
+
+

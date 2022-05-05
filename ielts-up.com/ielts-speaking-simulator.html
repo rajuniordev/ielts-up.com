@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from ielts-up.com/ielts-speaking-simulator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 May 2022 08:56:28 GMT -->
+<head>
+		<script src="js/recorder.js"></script>
+		<script src="js/Fr.voice.js"></script>
+    	<script src="js/jquery.js"></script>
+		<script src="js/record.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Practise IELTS Speaking online for free: unique IELTS speaking test simulator." />
+<meta name="keywords" content="ielts speaking, simulator, test, practice, online, free" />
+
+
+<link rel="stylesheet" 
+    media="(max-width : 1150px)" href="ipad.css">
+	<link rel = "stylesheet"  media="(min-width : 1150px)" type = "text/css" href = "style.css">
+<title>IELTS speaking test simulator</title>
+</head>
+
+<body>
+
+<!----------------left sidebar---------------------------------->
+<div id="sidebar-left">
+
+  <div id="left-menu">
+  
+    <div class="bookmark1"> <a href="ielts-writing-correction.html" >Writing correction</a> </div>
+    <div class="bookmark2">IELTS vocabulary</div>
+    		<div class="sub2"><a href="writing/ielts-vocabulary-writing.html">Writing</a></div>
+            <div class="sub2"><a href="speaking/ielts-vocabulary-speaking.html">Speaking</a></div>
+    <div class="bookmark4"> <a href="ielts-score-maximizer.html">Maximize your score!</a> </div>
+    <div class="bookmark3">IELTS test samples</div>
+    		<div class="sub3"><a href="listening/ielts-listening-practice.html">Listening</a></div>
+            <div class="sub3"><a href="reading/ielts-reading-practice.html">Reading</a></div>
+            <div class="sub3"><a href="writing/ielts-writing-practice.html">Writing</a></div>
+            <div class="sub3"><a href="speaking/ielts-speaking-practice.html">Speaking</a></div>
+    <!--<div class="bookmark5"> <a href="/trial-ielts-exam.html">Take trial IELTS </a> </div>-->
+    <div class="bookmark5"> <a href="ielts-speaking-simulator.html">Speaking simulator</a> </div>
+  </div>
+  <!-- left-menu end -->
+  
+  
+  
+</div>
+<!-- sidebar-left end --> 
+
+
+<!------------------right sidebar-------------------------------------->
+
+<div id="sidebar-right" align="center">
+  <form class="news-letter" action="https://ielts-up.com/join.php" method="post">
+    <!-- subscribe/подписка -->
+    <h2 class="news-letter-title">Free IELTS lessons signup</h2>
+    <input type="text" class="news-letter-input" name="name" placeholder="Your name" autofocus>
+    <input type="text" class="news-letter-input" name="email" placeholder="Your Email" autofocus>
+    <input type="submit" value="Subscribe!" class="news-letter-button">
+  </form>
+  <!-- news-letter end --> 
+  
+</div>
+
+<!-------------------page----------------------------------->
+
+<div id="page">
+  <!--------------------header, logo and top-menu ------------------->
+
+    <div id="header">     
+    
+    </div>
+    <!-- header end --> 
+    <div id="menu">
+            
+        <ul>
+        	 <a href="index.html" class="home-button green" >
+             <li><img src="images/home-img.png" alt="home"/></li></a>
+            
+            <li> 
+            <input type="checkbox" id="drop-l">
+            <label for="drop-l" class="toggle button green">Listening</label>
+            <a class="button green" href="listening/ielts-listening-test.html">Listening</a>
+              <ul>
+                <a href="listening/ielts-listening-practice.html"><li>Practice</li></a>
+                <a href="listening/ielts-listening-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            
+            <li>             
+            <input type="checkbox" id="drop-r">
+            <label for="drop-r" class="toggle button green">Reading</label>
+            <a class="button green" href="reading/ielts-reading-test.html">Reading</a>
+              <ul> 
+                
+                <a href="reading/ielts-reading-practice.html#academic"><li>Academic practice</li></a>
+                <a href="reading/ielts-reading-practice.html#general"><li>General practice</li></a>
+                <a href="reading/ielts-reading-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            <li>
+            <input type="checkbox" id="drop-w">
+            <label for="drop-w" class="toggle button green">Writing</label>
+            <a class="button green" href="writing/ielts-writing-test.html">Writing</a>
+            <ul>
+                <a href="writing/ielts-academic-task-1.html"><li>Task 1 Academic</li></a>
+                <a href="writing/ielts-general-task-1.html"><li>Task 1 General</li></a>
+                <a href="writing/ielts-essay.html"><li>Task 2 (essay)</li></a>
+                <a href="writing/ielts-vocabulary-writing.html"><li>Vocabulary</li></a>
+                <a href="writing/ielts-writing-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            <li> 
+            <input type="checkbox" id="drop-s">
+            <label for="drop-s" class="toggle button green">Speaking</label>
+            <a class="button green" href="speaking/ielts-speaking-test.html">Speaking</a>
+              <ul>
+                <a href="speaking/ielts-speaking-practice.html"><li>Practice</li></a>
+                <a href="speaking/ielts-vocabulary-speaking.html"><li>Vocabulary</li></a>
+                <a href="speaking/ielts-speaking-tips.html"><li>Tips</li></a>
+              </ul>
+            </li>
+            <li> 
+            <input type="checkbox" id="drop-e">
+            <label for="drop-e" class="toggle button green">Exercises</label>
+            <a class="button green" href="exercises/free-ielts-exercises.html">Exercises</a>
+              <ul>
+                <a href="exercises/ielts-listening-exercises.html"><li>Listening</li></a>
+                <a href="exercises/ielts-reading-exercises.html"><li>Reading</li></a>
+                <a href="exercises/ielts-writing-exercises.html"><li>Writing</li></a>
+                <a href="exercises/ielts-speaking-exercises.html"><li>Speaking</li></a>
+              </ul>
+            </li>
+          </ul>
+      </div> <!----- menu end -----> 
+    
+    <!-------------------page content ---------------------------->
+    
+        <div id="content"><div id="mobile-subscribe" align="right"><a href="subscribe.html">Subscribe for free IELTS lessons</a></div>
+        <div id="left-menu-under"> </div>
+        
+        <h1>IELTS speaking test simulator</h1> 
+        	
+          <p>You are going to have an <strong>online IELTS speaking test</strong>. <ol> 
+          <li> Press "<u>Start speaking test</u>" and answer the first question aloud. </li>
+          <li> After pressing "Start speaking test" you can use "<u>Show transcript</u>" option. </li>
+          <li> When you are ready to move on, click "<u>Ask me next question</u>".</li>
+          <li> After you finish, you can <ul>
+          		<li>hear all your speaking test recording by pressing "<u>Play my speaking test</u>";</li>
+                <li>download the recording by pressing "<u>Download my speaking test</u>".</li>
+                <li>send any of your recordings for assessment by clicking "<u>Upload my recording for correction</u>" and uploading your file.</li></ul></li></ol> Good luck! </p> 
+          <p id="browser" style="color:red; display:none;">To be able to play and download your speaking recording, use <a href="https://www.mozilla.org/en-US/firefox/new/#" rel="nofollow">Mozilla Firefox</a>, <a href="http://www.opera.com/?utm_expid=8257061-86.gyVPVfJ5QN-0DjQizgoefg.0&amp;utm_referrer=http%3A%2F%2Fwww.opera.com%2Fru" rel="nofollow">Opera</a> or <a href="https://www.google.com/chrome/browser/desktop/index.html" rel="nofollow">Google Chrome browser</a>!</p>
+          <p id="webrtc"></p>
+          <p><strong>Speaking test #</strong> <select id="select">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          </select>  &emsp;
+          <a id="popup" class="buttonS1">Upload my recording <br />for correction</a> </p>
+          <button class="buttonG disabled" id="b" type="button" onclick="toggle()"> 
+<img height="25px" src="images/show.png" style="vertical-align: middle"  />Show transcript for the test</button>
+  <div id="answers" style="display:none;"  class="hint">
+  </div> 
+        
+          
+<br />
+          
+          		<div id="sheet"></div>
+                
+                <!-- Pop-up form -->
+                  <div id="popupContact" style="display:none;">
+                
+                <form method="POST" action="https://ielts-up.com/server.php" id="form" enctype='multipart/form-data'>
+                <img id="close" src="images/close.png" height="21px">
+                <h2 align="center">Check my speaking test!</h2>
+                <p>You can upload ANY of your speaking recordings for correction. The examiner will check it and reply to you in 24 hours. </p>
+                <hr> 
+                <input id="name" name="name" placeholder="Name" type="text" required="required">
+                <input id="email" name="email" placeholder="Email" type="text" required="required">
+                <textarea id="msg" name="msg" placeholder="Message"></textarea>
+               <!--<input id="popup-url" name="link" id="link" style="opacity:0;" />-->
+                <input type='file' name='file' required="required"><br /><br />
+                <input type="submit" value="Upload recording" align="middle" class="buttonS">
+                </form><br /><br />
+                </div>
+                <!-- Popup Div Ends Here -->
+                
+                <br />
+                
+          
+                  <div style="margin-top:0;">
+			<a class="buttonS" id="record">Start speaking test</a>
+            <a class="buttonS disabled one" id="next">Ask me next question</a>
+			<a class="buttonS disabled one" id="stop">Finish test</a> <br />
+			<a class="buttonS disabled one" id="play">Play my speaking test</a>
+			<a class="buttonS disabled one" id="download">Download my speaking test</a>
+           <!-- <a class="buttonS disabled" id="playall">Play all</a>
+      <a class="buttonS disabled one" id="base64">Base64 URL</a>
+      <a class="buttonS disabled one" id="mp3">MP3 URL</a> -->
+		</div>
+        
+          
+        <p><div class="audioMargin1"  style="font-weight:bold;">Examiner's question:</div><audio controls controlsList="nodownload" src="#" id="examiner"></audio> </p>
+        
+        <div class="exam-extract hidden" id="card">
+          </div>
+          
+          <p class="loading">Recording</p> <div class="loading">
+            <div id="block_1" class="barlittle"></div>
+            <div id="block_2" class="barlittle"></div>
+            <div id="block_3" class="barlittle"></div>
+            <div id="block_4" class="barlittle"></div>
+            <div id="block_5" class="barlittle"></div>
+           </div> 
+
+		<p><div class="audioMargin2" style="font-weight:bold;">Your speaking test record:</div><audio controls controlsList="nodownload" src="#" id="audio"></audio></p>
+
+		<!--<div id="show-questions">Show speaking test 1 questions</div>-->
+		<!--<input class="buttonS" type="checkbox" id="live"/>
+		<label for="live">Live Output</label>-->
+		<style>
+		audio {width: 400px; vertical-align:middle; }
+		#audio, .audioMargin2, .audioMargin1, #examiner{opacity:0;}
+		.hidden {display:none;}
+		.audioMargin1, .audioMargin2 {width: 260px; display:inline-block; }
+		.buttonS{
+			display: inline-block;
+			vertical-align: middle;
+			margin: 5px;
+			padding: 5px 12px;
+			cursor: pointer;
+			outline: none;
+			font-size: 1em;
+			text-decoration: none !important;
+			text-align: center;
+			color:#fff !important;
+			background-color: #4D90FE;
+			background-image: linear-gradient(top,#4D90FE, #4787ED);
+			background-image: -ms-linear-gradient(top,#4D90FE, #4787ED);
+			background-image: -o-linear-gradient(top,#4D90FE, #4787ED);
+			background-image: linear-gradient(top,#4D90FE, #4787ED);
+			border: 1px solid #4787ED;
+			box-shadow: 0 1px 3px #BFBFBF;
+		}
+		
+		.buttonG {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 5px;
+			padding: 5px 12px;
+			cursor: pointer;
+			outline: none;
+			font-size: 1em;
+			text-decoration: none !important;
+			text-align: center;
+			color:#fff !important;
+			background-color: #a9a9a9;
+			border: 1px solid #9e9d9d;
+			box-shadow: 0 1px 3px #BFBFBF;}
+			
+		a.buttonS, a.buttonG{
+			color: #fff;
+		}
+		.buttonS:hover{
+			box-shadow: inset 0px 1px 1px #8C8C8C;
+			background-color:#4289fc;
+		}
+		
+		.buttonG:hover{
+			box-shadow: inset 0px 1px 1px #8C8C8C;
+			background-color:#9e9d9d;
+		}
+		
+		.buttonS.disabled{
+			box-shadow:none;
+			background-color: #4D90FE;
+			opacity:0.7;
+		}
+		
+		.buttonG.disabled{
+			box-shadow:none;
+			background-color: #adacac;
+			opacity:0.7;
+		}
+		
+		.buttonS1{
+			float:right;
+			vertical-align: middle;
+			margin: 5px;
+			position:relative;
+			bottom:15px;
+			padding: 5px 12px;
+			cursor: pointer;
+			outline: none;
+			font-size: 1em;
+			text-decoration: none !important;
+			text-align: center;
+			color:#fff !important;
+			background-color: #26d581;
+			
+			border: 1px solid #03c568;
+			box-shadow: 0 1px 3px #BFBFBF;
+		}
+		a.buttonS1{
+			color: #000;
+		}
+		.buttonS1:hover{
+			box-shadow: inset 0px 1px 1px #8C8C8C;
+			background-color:#1cc272;
+		}
+		.buttonS1.disabled{
+			box-shadow:none;
+			background-color: #47E99B;
+			opacity:0.7;
+		}
+		
+		
+		img#close {
+		position:absolute;
+		right:-9px;
+		top:-9px;
+		cursor:pointer
+		}
+		div#popupContact {
+		position:absolute;
+		z-index:4;
+		left:50%;
+		top:10%;
+		margin-left:-202px;
+		}
+		#popupContact form {
+		max-width:300px;
+		min-width:250px;
+		padding:10px 30px;
+		border:2px solid #FF9612;
+		border-radius:10px;
+		background:#fff;
+		}
+		#popupContact hr {
+		margin:7px -25px;
+		border:0;
+		border-top:1px solid #ccc
+		}
+		#popupContact input[type=text] {
+		width:82%;
+		padding:10px;
+		margin-top:30px;
+		border:1px solid #ccc;
+		font-size:16px;
+		font-family:raleway
+		}
+		#name {
+		background-image:url(images/name.html);
+		background-repeat:no-repeat;
+		background-position:5px 7px
+		}
+		#email {
+		background-image:url(images/email.html);
+		background-repeat:no-repeat;
+		background-position:5px 7px
+		}
+		#popupContact textarea {
+		background-image:url(images/msg.html);
+		background-repeat:no-repeat;
+		background-position:5px 7px;
+		width:82%;
+		height:65px;
+		padding:10px;
+		resize:none;
+		margin-top:30px;
+		border:1px solid #ccc;
+		font-size:16px;
+		font-family:raleway;
+		margin-bottom:30px
+		}
+		#sheet{ 
+		position:absolute; 
+		z-index:3;  display:none; 
+		left:0;
+		top:0;
+		width:100%; height:100%;
+		background-color:#333; 
+		opacity:0.8;}
+		
+		.loading {display: none; color:#09F; font-weight:bold; margin-bottom:0;}
+		.barlittle {
+			display: inline-block;
+			vertical-align:middle;
+			background-color: #2187e7;
+			background-image: -moz-linear-gradient(45deg, #2187e7 25%, #a0eaff);
+			background-image: -webkit-linear-gradient(45deg, #2187e7 25%, #a0eaff);
+			border-left: 1px solid #111;
+			border-top: 1px solid #111;
+			border-right: 1px solid #333;
+			border-bottom: 1px solid #333;
+			width: 10px;
+			height: 10px;
+			float: left;
+			margin-left: 5px;
+			opacity: 0.1;
+			-moz-transform: scale(0.7);
+			-webkit-transform: scale(0.7);
+			-moz-animation: move 2s infinite linear;
+			-webkit-animation: move 2s infinite linear;
+		}
+		
+		#block_1 {
+			-moz-animation-delay: .8s;
+			-webkit-animation-delay: .8s;
+		}
+		
+		#block_2 {
+			-moz-animation-delay: .6s;
+			-webkit-animation-delay: .6s;
+		}
+		
+		#block_3 {
+			-moz-animation-delay: .4s;
+			-webkit-animation-delay: .4s;
+		}
+		
+		#block_4 {
+			-moz-animation-delay: .6s;
+			-webkit-animation-delay: .6s;
+		}
+		
+		#block_5 {
+			-moz-animation-delay: .8s;
+			-webkit-animation-delay: .8s;
+		}
+		
+		@-moz-keyframes move {
+			0% {
+				-moz-transform: scale(1.2);
+				opacity: 1;
+			}
+		
+			100% {
+				-moz-transform: scale(0.7);
+				opacity: 0.1;
+			};
+		}
+		
+		@-webkit-keyframes move {
+			0% {
+				-webkit-transform: scale(1.2);
+				opacity: 1;
+			}
+		
+			100% {
+				-webkit-transform: scale(0.7);
+				opacity: 0.1;
+			};
+		}
+		</style>
+            
+            
+            <script async src="../pagead2.googlesyndication.com/pagead/js/f.txt"></script>
+<!-- Optimal ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4755909702341001"
+     data-ad-slot="5697360778"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            
+            <!----- social services -------> 
+          <div id="social"> <!-- facebook, twitter, vk --> 
+     
+     <div class="like">
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="https://www.ielts-up.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        </div>
+        
+        <div class="like">
+        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+        
+        <div class="like">
+        <script type="text/javascript" src="../apis.google.com/js/plusone.js"></script>
+<g:plusone size="medium"></g:plusone>
+		</div>
+        
+        </div>   
+        
+     <!-- social services end -->
+     
+        </div>
+        <!-- content end -->  
+
+        
+        
+    <!-----------------------------------------------------------> 
+
+<div id="footer" align="center">
+ <a href="contacts.html">Contact us</a> &nbsp;
+ <a href="project.html">About the project</a>
+ <br> &copy;  ielts-up.com, 2015-2019. All rights reserved. 
+ <!--<br /> <span style="font-size:9px; line-height:110%;">IELTS® is a registered trademark of University of Cambridge ESOL, the British Council, and IDP Education Australia. By using this website, you agree that you fully understand that it is not affiliated, approved or endorsed by University of Cambridge ESOL, the British Council, or IDP Education Australia. </span> -->
+ 
+</div> <!-- footer end -->
+
+</div>
+<!-- page end -->
+
+
+
+
+</body>
+
+<!-- Mirrored from ielts-up.com/ielts-speaking-simulator.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 May 2022 08:56:31 GMT -->
+</html>
+
+
+
+
+
+
+

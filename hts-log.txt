@@ -1,0 +1,43 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 04 May 2022 14:55:03 at https://ielts-up.com/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://ielts-up.com/index.html -O1 "C:\Users\WALTON\Desktop\Ielts Up" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:55:05	Warning: 	Note: due to https://ielts-up.com remote robots.txt rules, links beginning with these path will be forbidden: /newsletter.php, /emails.dat, /unjoin.php, /sendmails.php, /smtp-mail.php (see in the options to disable this)
+14:55:39	Warning: 	Moved Permanently for ielts-up.com/robots.txt
+14:55:39	Warning: 	Redirected link is identical because of 'URL Hack' option: ielts-up.com/robots.txt and https://ielts-up.com/robots.txt
+14:55:39	Warning: 	Warning moved treated for ielts-up.com/robots.txt (real one is https://ielts-up.com/robots.txt)
+14:55:39	Warning: 	Moved Permanently for ielts-up.com/
+14:55:39	Warning: 	Redirected link is identical because of 'URL Hack' option: ielts-up.com/ and https://ielts-up.com/
+14:55:39	Warning: 	File has moved from ielts-up.com/ to https://ielts-up.com/
+14:57:41	Warning: 	Link https://ielts-up.com/subscribe.html not scanned (follow robots meta tag)
+15:18:19	Warning: 	file not stored in cache due to bogus state (broken size, expected 3334657 got 1850216): https://ielts-up.com/listening/14.2.mp3
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/images/name.jpg (from https://ielts-up.com/ielts-speaking-simulator.html)
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/images/email.png (from https://ielts-up.com/ielts-speaking-simulator.html)
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/images/msg.png (from https://ielts-up.com/ielts-speaking-simulator.html)
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/listening/ielts-listening-sample-1.1.html (from https://ielts-up.com/listening/ielts-listening-test.html)
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/listening/ielts-listening-sample-1.2.html (from https://ielts-up.com/listening/ielts-listening-test.html)
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/listening/ielts-listening-sample-1.3.html (from https://ielts-up.com/listening/ielts-listening-test.html)
+15:19:52	Error: 	"Not Found" (404) at link https://ielts-up.com/listening/ielts-listening-sample-1.4.html (from https://ielts-up.com/listening/ielts-listening-test.html)
+15:24:16	Warning: 	file not stored in cache due to bogus state (broken size, expected 644955 got 131008): https://ielts-up.com/listening/whales.mp3
+15:28:05	Warning: 	file not stored in cache due to bogus state (broken size, expected 6944392 got 147456): https://ielts-up.com/listening/multiple-choice-1.mp3
+15:29:58	Warning: 	Retry after error -4 (Incorrect length (1948248 Bytes, 3376744 expected)) at link https://ielts-up.com/listening/13.4.mp3 (from https://ielts-up.com/listening/ielts-listening-sample-13.4.html)
+15:30:11	Warning: 	Retry after error -4 (Incorrect length (1719024 Bytes, 11352192 expected)) at link https://ielts-up.com/listening/14.1.mp3 (from https://ielts-up.com/listening/ielts-listening-sample-14.1.html)
+15:30:14	Warning: 	file not stored in cache due to bogus state (broken size, expected 852776 got 392896): https://ielts-up.com/speaking/audio_for_lessons/5.wav
+15:30:14	Warning: 	Retry after error -4 (Incorrect length (1850216 Bytes, 3334657 expected)) at link https://ielts-up.com/listening/14.2.mp3 (from https://ielts-up.com/listening/ielts-listening-sample-14.2.html)
+15:30:50	Warning: 	file not stored in cache due to bogus state (broken size, expected 3334657 got 1915417): https://ielts-up.com/listening/14.2.mp3
+15:30:50	Warning: 	Retry after error -2 (Receive Time Out) at link https://ielts-up.com/listening/14.3.mp3 (from https://ielts-up.com/listening/ielts-listening-sample-14.3.html)
+15:30:53	Warning: 	Retry after error -2 (Receive Time Out) at link https://ielts-up.com/listening/14.4.mp3 (from https://ielts-up.com/listening/ielts-listening-sample-14.4.html)
+15:31:16	Error: 	"Not Found" (404) at link https://ielts-up.com/images/r11.1-image.jpg (from https://ielts-up.com/reading/academic-reading-sample-11.1.html)
+15:31:16	Error: 	"Not Found" (404) at link https://ielts-up.com/GET (from https://ielts-up.com/ielts-speaking-by-skype.html)
+15:31:18	Warning: 	Retry after error -4 (Incorrect length (131008 Bytes, 644955 expected)) at link https://ielts-up.com/listening/whales.mp3 (from https://ielts-up.com/listening/listening-exercise-1.html)
+15:31:22	Warning: 	Retry after error -4 (Incorrect length (147456 Bytes, 6944392 expected)) at link https://ielts-up.com/listening/multiple-choice-1.mp3 (from https://ielts-up.com/listening/multiple-choice.html)
+15:31:29	Warning: 	Retry after error -4 (Incorrect length (392896 Bytes, 852776 expected)) at link https://ielts-up.com/speaking/audio_for_lessons/5.wav (from https://ielts-up.com/speaking/lesson-relevant-answer.html)
+15:32:57	Warning: 	Retry after error -4 (Incorrect length (1915417 Bytes, 3334657 expected)) at link https://ielts-up.com/listening/14.2.mp3 (from https://ielts-up.com/listening/ielts-listening-sample-14.2.html)
+15:33:07	Error: 	"Not Found" (404) at link https://ielts-up.com/q1.mp3 (from https://ielts-up.com/ielts-speaking-trial.html)
+
+HTTrack Website Copier/3.49-2 mirror complete in 38 minutes 6 seconds : 509 links scanned, 487 files written (461831528 bytes overall) [458853280 bytes received at 200723 bytes/sec], 4616639 bytes transferred using HTTP compression in 262 files, ratio 31%, 4.0 requests per connection
+(10 errors, 22 warnings, 0 messages)
